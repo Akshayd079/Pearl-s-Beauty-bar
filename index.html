@@ -905,7 +905,7 @@ img{display:block;max-width:100%}
         </div>
       </div>
       <div><label for="fmsg">Additional Notes</label><textarea id="fmsg" name="message" rows="3" placeholder="Any notes, skin sensitivities or preferences…" style="resize:vertical;"></textarea></div>
-      <button type="submit" class="btn-g" style="width:100%;padding:15px;font-size:.72rem;margin-top:4px;">Send Booking Request</button>
+      <button type="button" class="btn-g" style="width:100%;padding:15px;font-size:.72rem;margin-top:4px;">Send Booking Request</button>
     </form>
     <div id="form-ok" class="fi" style="text-align:center;padding:3.5rem 0;">
       <div style="width:56px;height:56px;border-radius:50%;border:1px solid rgba(201,169,110,.35);background:rgba(201,169,110,.07);display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;">
@@ -1044,17 +1044,22 @@ const ap=document.getElementById('about-panel');
 if(ap)apIO.observe(ap);
 
 /* FORM */
-emailjs.init('48dGXF3iuR8EXnoQC');
+const form=document.getElementById('bform');
+const submitBtn=form.querySelector('button[type="button"]');
 const dateInput=document.getElementById('fd');
 if(dateInput)dateInput.min=new Date().toISOString().split('T')[0];
-document.getElementById('bform').addEventListener('submit',e=>{
-  e.preventDefault();
+submitBtn.addEventListener('click',()=>{
   let ok=true;
-  e.target.querySelectorAll('[required]').forEach(f=>{
+  form.querySelectorAll('[required]').forEach(f=>{
     if(!f.value.trim()){ok=false;f.style.borderColor='rgba(201,169,110,.6)';}
     else f.style.borderColor='';
   });
   if(!ok)return;
+  if(!window.emailjs){
+    alert('Email sending is unavailable in the local preview. Please upload the site to a live HTTPS website first, then submit again.');
+    return;
+  }
+  emailjs.init('48dGXF3iuR8EXnoQC');
   const formData={
     name:document.getElementById('fn').value,
     phone:document.getElementById('fp').value,
@@ -1065,18 +1070,17 @@ document.getElementById('bform').addEventListener('submit',e=>{
     message:document.getElementById('fmsg').value
   };
   emailjs.send('service_83s2v7r','template_q5vir9p',formData).then(()=>{
-    const form=document.getElementById('bform');
-    const succ=document.getElementById('form-ok');
     form.style.transition='opacity .5s ease';
     form.style.opacity='0';
     setTimeout(()=>{
       form.style.display='none';
+      const succ=document.getElementById('form-ok');
       succ.style.display='block';
       requestAnimationFrame(()=>succ.classList.add('on'));
     },500);
   }).catch(err=>{
     console.error('Email error:',err);
-    alert('Error sending inquiry. Please try again.');
+    alert('Error sending inquiry. Please try again after the site is live on HTTPS.');
   });
 });
 </script>
