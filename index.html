@@ -969,6 +969,7 @@ img{display:block;max-width:100%}
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/build/index.min.js"></script>
 <script>
 /* CURSOR */
 const cur=document.getElementById('cur');
@@ -1041,6 +1042,7 @@ const ap=document.getElementById('about-panel');
 if(ap)apIO.observe(ap);
 
 /* FORM */
+emailjs.init('48dGXF3iuR8EXnoQC');
 const dateInput=document.getElementById('fd');
 if(dateInput)dateInput.min=new Date().toISOString().split('T')[0];
 document.getElementById('bform').addEventListener('submit',e=>{
@@ -1051,15 +1053,29 @@ document.getElementById('bform').addEventListener('submit',e=>{
     else f.style.borderColor='';
   });
   if(!ok)return;
-  const form=document.getElementById('bform');
-  const succ=document.getElementById('form-ok');
-  form.style.transition='opacity .5s ease';
-  form.style.opacity='0';
-  setTimeout(()=>{
-    form.style.display='none';
-    succ.style.display='block';
-    requestAnimationFrame(()=>succ.classList.add('on'));
-  },500);
+  const formData={
+    name:document.getElementById('fn').value,
+    phone:document.getElementById('fp').value,
+    email:document.getElementById('fe').value,
+    service:document.getElementById('fs').value,
+    date:document.getElementById('fd').value,
+    time:document.getElementById('ft').value,
+    message:document.getElementById('fmsg').value
+  };
+  emailjs.send('service_83s2v7r','template_q5vir9p',formData).then(()=>{
+    const form=document.getElementById('bform');
+    const succ=document.getElementById('form-ok');
+    form.style.transition='opacity .5s ease';
+    form.style.opacity='0';
+    setTimeout(()=>{
+      form.style.display='none';
+      succ.style.display='block';
+      requestAnimationFrame(()=>succ.classList.add('on'));
+    },500);
+  }).catch(err=>{
+    console.error('Email error:',err);
+    alert('Error sending inquiry. Please try again.');
+  });
 });
 </script>
 </body>
