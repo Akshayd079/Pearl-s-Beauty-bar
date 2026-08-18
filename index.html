@@ -3,12 +3,17 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-<title>Pearl Beauty Bar Perth | Eyebrow Threading, Brow Lamination & Beauty Treatments</title>
-<meta name="description" content="Pearl Beauty Bar Perth — expert eyebrow threading, brow lamination, lash lifting & facials. Private studio in Perth WA. Book online today."/>
-<meta name="robots" content="index, follow"/>
+<title>Pearl Beauty Bar Perth | Brow Lamination, Lash Lift & Beauty Salon in WA</title>
+<meta name="description" content="Pearl Beauty Bar Perth is a premium beauty salon in Perth, WA offering eyebrow threading, brow lamination, lash lifting, facials and beauty treatments. Book online today."/>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
 <meta name="theme-color" content="#09090D"/>
+<meta name="geo.region" content="AU-WA"/>
+<meta name="geo.placename" content="Perth, Western Australia"/>
+<meta name="geo.position" content="-31.9505;115.8605"/>
+<meta name="ICBM" content="-31.9505, 115.8605"/>
 
 <link rel="canonical" href="https://www.pearlbeautybar.com.au/">
+<link rel="alternate" hreflang="en-AU" href="https://www.pearlbeautybar.com.au/"/>
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -16,10 +21,11 @@
 
 <!-- Open Graph (Facebook, Instagram link previews) -->
 <meta property="og:type" content="business.business"/>
-<meta property="og:title" content="Pearl Beauty Bar Perth | Eyebrow Threading & Brow Lamination"/>
-<meta property="og:description" content="Expert eyebrow threading, brow lamination, lash lifting & facials in a private Perth studio. Book online today."/>
+<meta property="og:title" content="Pearl Beauty Bar Perth | Beauty Salon in Perth WA"/>
+<meta property="og:description" content="Premium beauty salon in Perth, WA offering eyebrow threading, brow lamination, lash lifting, facials and expert beauty treatments."/>
 <meta property="og:image" content="https://www.pearlbeautybar.com.au/hero.jpg"/>
 <meta property="og:url" content="https://www.pearlbeautybar.com.au/"/>
+<meta property="og:site_name" content="Pearl Beauty Bar Perth"/>
 <meta property="og:locale" content="en_AU"/>
 
 <!-- Twitter Card -->
@@ -49,6 +55,7 @@
     "postalCode": "6000",
     "addressCountry": "AU"
   },
+  "areaServed": ["Perth","Western Australia","WA"],
   "priceRange": "$12-$89",
   "url": "https://www.pearlbeautybar.com.au/",
   "openingHoursSpecification": [
@@ -58,7 +65,12 @@
   "sameAs": [
     "https://www.instagram.com/pearlbeautybar",
     "https://www.facebook.com/pearlbeautybar"
-  ]
+  ],
+  "keywords": ["beauty salon Perth", "brow lamination Perth", "eyebrow threading Perth", "lash lift Perth", "Perth beauty salon"],
+  "foundingLocation": {
+    "@type": "City",
+    "name": "Perth, Western Australia"
+  }
 }
 </script>
 
@@ -326,6 +338,17 @@ img{display:block;max-width:100%}
   .soc{width:32px;height:32px}
 }
 
+/* PRICING TABS */
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.ptab{position:relative}
+.ptab.active{color:var(--gold)}
+.ptab.active::after{content:'';position:absolute;bottom:-12px;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);animation:slideIn .4s cubic-bezier(.23,1,.32,1)}
+.ptab:hover{color:var(--gold)}
+@keyframes slideIn{from{transform:scaleX(0);transform-origin:center}to{transform:scaleX(1)}}
+.ptab-content{display:none;opacity:0;transform:translateY(20px);transition:opacity .4s cubic-bezier(.23,1,.32,1),transform .4s cubic-bezier(.23,1,.32,1);pointer-events:none}
+.ptab-content.active{display:block;opacity:1;transform:none;pointer-events:auto}
+.ptab-content.active .prow{opacity:1;transform:none}
+
 /* CONTAINERS */
 .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
 .container-md{max-width:900px;margin:0 auto;padding:0 1.5rem}
@@ -345,6 +368,16 @@ img{display:block;max-width:100%}
   section{padding:3.5rem 1rem !important}
   #nav{padding:16px 1rem}
   #nav.stuck{padding:10px 1rem}
+  #hero{min-height:75svh;padding:1rem 0 2rem}
+  #hero h1{font-size:clamp(2.2rem,12vw,3.3rem)!important;line-height:1.04!important}
+  #hero p{font-size:.8rem!important}
+  .h5{margin-top:2rem!important}
+  .ptab{font-size:.52rem!important;letter-spacing:.12em!important;padding:8px 10px!important}
+  .ptab.active::after{bottom:-8px}
+  .ptab-content{min-height:0!important}
+  .prow{padding:12px 14px!important;flex-wrap:wrap;gap:6px 10px}
+  .prow > div{display:flex;align-items:center;justify-content:space-between;width:100%}
+  .prow .serif{white-space:nowrap}
 }
 
 /* TABLET - 641px to 1024px */
@@ -397,16 +430,16 @@ img{display:block;max-width:100%}
   #hero{min-height:90svh}
 }
 </style>
-</head>
+<meta name="google-site-verification" content="JnsRIqfhh5fv7RyU49jSLntypYAu5T3H4yVw3vz7-nY" /></head>
 <body>
 <div id="cur"></div>
 <div id="cur2"></div>
 <header>
 <nav id="nav">
   <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
-    <a href="/" style="line-height:1.15;">
-      <div class="serif" style="font-size:1.5rem;color:var(--bright);font-weight:600;">Pearl</div>
-      <div class="serif" style="font-size:.95rem;font-style:italic;color:var(--gold);letter-spacing:.08em;">Beauty Bar</div>
+    <a href="/" style="line-height:1.1;display:inline-flex;flex-direction:column;align-items:flex-start;min-width:130px;padding-top:2px;filter:drop-shadow(0 0 10px rgba(201,169,110,.12));">
+      <span class="serif" style="font-size:2rem;color:#f3efe8;font-weight:600;letter-spacing:.02em;line-height:1;">Pearl</span>
+      <span class="serif" style="font-size:.9rem;font-style:italic;color:var(--gold);letter-spacing:.12em;line-height:1.1;margin-top:4px;">Beauty Bar</span>
     </a>
     <ul id="nav-links" style="display:none;gap:2.4rem;list-style:none;">
       <li><a href="#services" class="nav-a">Services</a></li>
@@ -455,16 +488,16 @@ img{display:block;max-width:100%}
   <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(9,9,13,.55) 0%,rgba(9,9,13,.3) 40%,rgba(9,9,13,.85) 100%);"></div>
 </div>
   <div style="position:relative;z-index:2;text-align:center;max-width:660px;margin:0 auto;padding:0 1.25rem;">
-    <div class="h1" style="margin-bottom:1.8rem;">
+    <div class="h3" style="margin:0 0 1.4rem;">
       <span style="display:inline-flex;align-items:center;gap:10px;padding:7px 18px;border:1px solid rgba(201,169,110,.22);border-radius:50px;background:rgba(201,169,110,.04);">
         <span style="width:5px;height:5px;border-radius:50%;background:var(--gold);display:inline-block;animation:blinkit 2.2s ease-in-out infinite;"></span>
         <span class="lbl" style="font-size:.58rem;">Perth, Western Australia</span>
       </span>
     </div>
-    <h1 class="serif h2" style="font-size:clamp(2.8rem,7vw,5.2rem);line-height:1.08;margin-bottom:1.3rem;">
+    <h1 class="serif h4" style="font-size:clamp(2.8rem,7vw,5.2rem);line-height:1.08;margin-bottom:1.3rem;">
       Perth's Local<br/><em style="color:var(--gold);font-weight:400;">Brow &amp; Beauty Spot</em>
     </h1>
-    <p class="h3" style="font-size:.95rem;color:var(--soft);line-height:1.9;max-width:420px;margin:0 auto 1rem;">Expert eyebrow threading, brow lamination, lash lifting &amp; facials — in a calm, private studio crafted just for you.</p>
+    <p class="h3" style="font-size:.95rem;color:var(--soft);line-height:1.9;max-width:420px;margin:0 auto 1rem;">Pearl Beauty Bar Perth offers expert eyebrow threading, brow lamination, lash lifting and facials in a calm, private studio for clients across Perth, WA.</p>
     <p class="h3" style="font-size:.78rem;color:var(--muted);line-height:1.8;max-width:380px;margin:0 auto 2.4rem;">Serving Perth WA · Walk-Ins Welcome · Book Online</p>
     <div class="h4" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
       <a href="#booking" class="btn-g">Book Online Now</a>
@@ -616,19 +649,15 @@ img{display:block;max-width:100%}
         <div class="sc-img">
           <img src="eyebrow-threading.jpg" alt="Eyebrow threading service at Pearl Beauty Bar Perth" style="object-position:50% 30%;">
         </div>
-        <div class="sc-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M2 20c3-6 7-9 10-9s7 3 10 9"/><circle cx="12" cy="7" r="4"/>
-          </svg>
-        </div>
-        <p class="lbl">Brows</p>
+        
+        
         <h3 class="serif sc-title">Eyebrow Threading</h3>
         <p class="sc-desc">
           Precision threading for perfectly sculpted brows. Our technique removes even
           the finest hairs for a clean, defined arch every time.
         </p>
         <div class="sc-footer">
-          <span class="sc-price">From $18</span>
+          <span class="sc-price">$22</span>
           <a href="#booking" class="btn-o">Book Now</a>
         </div>
       </article>
@@ -638,19 +667,14 @@ img{display:block;max-width:100%}
         <div class="sc-img">
           <img src="brow-lamination.jpg" alt="Brow lamination treatment at Pearl Beauty Bar Perth" style="object-position:50% 40%;">
         </div>
-        <div class="sc-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/>
-          </svg>
-        </div>
-        <p class="lbl">Brows</p>
+        
         <h3 class="serif sc-title">Brow Lamination</h3>
         <p class="sc-desc">
           Fluffy, feathered brows that stay groomed for up to 8 weeks. The ultimate
           fix for unruly or sparse brow hairs — no daily styling needed.
         </p>
         <div class="sc-footer">
-          <span class="sc-price">From $65</span>
+          <span class="sc-price">$59</span>
           <a href="#booking" class="btn-o">Book Now</a>
         </div>
       </article>
@@ -660,19 +684,14 @@ img{display:block;max-width:100%}
         <div class="sc-img">
           <img src="lash-lift.jpg" alt="Lash lift treatment at Pearl Beauty Bar Perth" style="object-position:50% 35%;">
         </div>
-        <div class="sc-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
-          </svg>
-        </div>
-        <p class="lbl">Lashes</p>
+       
         <h3 class="serif sc-title">Lash Lifting</h3>
         <p class="sc-desc">
           Curl and lift your natural lashes for wide-open, mascara-free eyes. Results
           last 6–8 weeks with zero damage to your natural lash line.
         </p>
         <div class="sc-footer">
-          <span class="sc-price">From $75</span>
+          <span class="sc-price">From $80</span>
           <a href="#booking" class="btn-o">Book Now</a>
         </div>
       </article>
@@ -682,19 +701,14 @@ img{display:block;max-width:100%}
         <div class="sc-img">
           <img src="brow-henna.jpg" alt="Brow henna tinting at Pearl Beauty Bar Perth" style="object-position:50% 30%;">
         </div>
-        <div class="sc-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10"/><path d="M12 8v4l3 3"/>
-          </svg>
-        </div>
-        <p class="lbl">Tinting</p>
+      
         <h3 class="serif sc-title">Brow Henna Tinting</h3>
         <p class="sc-desc">
           Natural henna tint that colours both the brow hair and skin for a fuller,
           bolder look. Lasts up to 2 weeks on skin and 6 weeks on hair.
         </p>
         <div class="sc-footer">
-          <span class="sc-price">From $35</span>
+          <span class="sc-price">$45</span>
           <a href="#booking" class="btn-o">Book Now</a>
         </div>
       </article>
@@ -704,19 +718,14 @@ img{display:block;max-width:100%}
         <div class="sc-img">
           <img src="eyebrow-facial-waxing.jpg" alt="Eyebrow and facial waxing at Pearl Beauty Bar Perth" style="object-position:50% 40%;">
         </div>
-        <div class="sc-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/>
-          </svg>
-        </div>
-        <p class="lbl">Waxing</p>
+       
         <h3 class="serif sc-title">Eyebrow & Facial Waxing</h3>
         <p class="sc-desc">
           Smooth, precise waxing for brows, upper lip, chin and full face. Gentle
           formula suitable for sensitive skin, with long-lasting results.
         </p>
         <div class="sc-footer">
-          <span class="sc-price">From $15</span>
+          <span class="sc-price">From $16</span>
           <a href="#booking" class="btn-o">Book Now</a>
         </div>
       </article>
@@ -726,19 +735,14 @@ img{display:block;max-width:100%}
         <div class="sc-img">
           <img src="facial.jpg" alt="Luxury facial treatment at Pearl Beauty Bar Perth" style="object-position:50% 40%;">
         </div>
-        <div class="sc-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-          </svg>
-        </div>
-        <p class="lbl">Facials</p>
+       
         <h3 class="serif sc-title">Facials </h3>
         <p class="sc-desc">
           Indulge in a tailored facial experience for your skin's unique needs. From
           deep-cleansing to hydrating treatments, leave refreshed and radiant.
         </p>
         <div class="sc-footer">
-          <span class="sc-price">From $89</span>
+          <span class="sc-price">From $45</span>
           <a href="#booking" class="btn-o">Book Now</a>
         </div>
       </article>
@@ -757,17 +761,82 @@ img{display:block;max-width:100%}
       <h2 class="serif" style="font-size:clamp(1.9rem,5vw,2.9rem);margin-bottom:.8rem;">Service Prices</h2>
       <p style="color:var(--soft);font-size:.88rem;line-height:1.8;">All prices in AUD. No hidden fees — what you see is what you pay.</p>
     </div>
-    <div class="ptable fu">
-      <div class="prow"><div><span class="ptag">Threading</span><span style="font-size:.88rem;color:var(--bright);">Eyebrow Threading</span></div><span class="serif" style="color:var(--gold);">From $12</span></div>
-      <div class="prow"><div><span class="ptag">Threading</span><span style="font-size:.88rem;color:var(--bright);">Lip Threading</span></div><span class="serif" style="color:var(--gold);">From $12</span></div>
-      <div class="prow"><div><span class="ptag">Threading</span><span style="font-size:.88rem;color:var(--bright);">Chin Threading</span></div><span class="serif" style="color:var(--gold);">From $12</span></div>
-      <div class="prow"><div><span class="ptag">Threading</span><span style="font-size:.88rem;color:var(--bright);">Full Face Threading</span></div><span class="serif" style="color:var(--gold);">From $30</span></div>
-      <div class="prow"><div><span class="ptag">Waxing</span><span style="font-size:.88rem;color:var(--bright);">Eyebrow Waxing</span></div><span class="serif" style="color:var(--gold);">From $12</span></div>
-      <div class="prow"><div><span class="ptag">Waxing</span><span style="font-size:.88rem;color:var(--bright);">Facial Waxing</span></div><span class="serif" style="color:var(--gold);">From $14</span></div>
-      <div class="prow"><div><span class="ptag">Brows</span><span style="font-size:.88rem;color:var(--bright);">Brow Henna Tinting</span></div><span class="serif" style="color:var(--gold);">From $25</span></div>
-      <div class="prow"><div><span class="ptag">Brows</span><span style="font-size:.88rem;color:var(--bright);">Brow Lamination</span></div><span class="serif" style="color:var(--gold);">From $35</span></div>
-      <div class="prow"><div><span class="ptag">Lashes</span><span style="font-size:.88rem;color:var(--bright);">Lash Lifting</span></div><span class="serif" style="color:var(--gold);">From $35</span></div>
-      <div class="prow"><div><span class="ptag">Skin</span><span style="font-size:.88rem;color:var(--bright);">Facial Treatment</span></div><span class="serif" style="color:var(--gold);">From $35</span></div>
+    <!-- Pricing Tabs -->
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:3rem;border-bottom:1px solid var(--border);padding-bottom:1.5rem;" class="fu">
+      <button class="ptab active" data-tab="threading" onclick="switchTab('threading')" style="padding:10px 16px;background:transparent;border:none;color:var(--muted);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border-bottom:2px solid transparent;transition:all .3s cubic-bezier(.23,1,.32,1);font-weight:500;">Threading & Waxing</button>
+      <button class="ptab" data-tab="tinting" onclick="switchTab('tinting')" style="padding:10px 16px;background:transparent;border:none;color:var(--muted);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border-bottom:2px solid transparent;transition:all .3s cubic-bezier(.23,1,.32,1);font-weight:500;">Tinting</button>
+      <button class="ptab" data-tab="combos" onclick="switchTab('combos')" style="padding:10px 16px;background:transparent;border:none;color:var(--muted);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border-bottom:2px solid transparent;transition:all .3s cubic-bezier(.23,1,.32,1);font-weight:500;">Combos</button>
+      <button class="ptab" data-tab="lashes" onclick="switchTab('lashes')" style="padding:10px 16px;background:transparent;border:none;color:var(--muted);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border-bottom:2px solid transparent;transition:all .3s cubic-bezier(.23,1,.32,1);font-weight:500;">Lash Lift</button>
+      <button class="ptab" data-tab="lamination" onclick="switchTab('lamination')" style="padding:10px 16px;background:transparent;border:none;color:var(--muted);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border-bottom:2px solid transparent;transition:all .3s cubic-bezier(.23,1,.32,1);font-weight:500;">Lamination</button>
+      <button class="ptab" data-tab="facials" onclick="switchTab('facials')" style="padding:10px 16px;background:transparent;border:none;color:var(--muted);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border-bottom:2px solid transparent;transition:all .3s cubic-bezier(.23,1,.32,1);font-weight:500;">Facials</button>
+      <button class="ptab" data-tab="relax" onclick="switchTab('relax')" style="padding:10px 16px;background:transparent;border:none;color:var(--muted);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border-bottom:2px solid transparent;transition:all .3s cubic-bezier(.23,1,.32,1);font-weight:500;">Relaxation</button>
+    </div>
+
+    <!-- Tab Content -->
+    <div id="threading" class="ptab-content active" style="min-height:400px;">
+      <div class="ptable" style="animation:fadeIn .5s ease-out;">
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Eyebrows Threading / Wax</span></div><span class="serif" style="color:var(--gold);">$22</span></div>
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Upper Lip Threading / Wax</span></div><span class="serif" style="color:var(--gold);">$16</span></div>
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Chin Threading / Wax</span></div><span class="serif" style="color:var(--gold);">$17</span></div>
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Nose Wax</span></div><span class="serif" style="color:var(--gold);">$15</span></div>
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Ear Wax</span></div><span class="serif" style="color:var(--gold);">$15</span></div>
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Lip + Chin Threading / Wax</span></div><span class="serif" style="color:var(--gold);">$30</span></div>
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Eyebrow + Lip + Chin</span></div><span class="serif" style="color:var(--gold);">$52</span></div>
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Sideburns</span></div><span class="serif" style="color:var(--gold);">$21</span></div>
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Neck</span></div><span class="serif" style="color:var(--gold);">$19</span></div>
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Full Face Threading / Wax</span></div><span class="serif" style="color:var(--gold);">$65</span></div>
+      </div>
+    </div>
+
+    <div id="tinting" class="ptab-content" style="min-height:400px;">
+      <div class="ptable" style="animation:fadeIn .5s ease-out;">
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Brow Henna</span></div><span class="serif" style="color:var(--gold);">$45</span></div>
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Bronsun Hybrid Dye</span></div><span class="serif" style="color:var(--gold);">$35</span></div>
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Eyebrow Tint</span></div><span class="serif" style="color:var(--gold);">$21</span></div>
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Lash Tint</span></div><span class="serif" style="color:var(--gold);">$22</span></div>
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Lash Dye</span></div><span class="serif" style="color:var(--gold);">$29</span></div>
+      </div>
+    </div>
+
+    <div id="combos" class="ptab-content" style="min-height:400px;">
+      <div class="ptable" style="animation:fadeIn .5s ease-out;">
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Brow Henna + Threading / Wax</span></div><span class="serif" style="color:var(--gold);">$59</span></div>
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Bronsun Dye + Threading / Wax</span></div><span class="serif" style="color:var(--gold);">$49</span></div>
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Eyebrow Tint + Threading / Wax</span></div><span class="serif" style="color:var(--gold);">$39</span></div>
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Eyebrow Threading / Wax + Lash Tint</span></div><span class="serif" style="color:var(--gold);">$55</span></div>
+      </div>
+    </div>
+
+    <div id="lashes" class="ptab-content" style="min-height:400px;">
+      <div class="ptable" style="animation:fadeIn .5s ease-out;">
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Lash Lift + Tint</span></div><span class="serif" style="color:var(--gold);">$80</span></div>
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Keratin Lash Lift + Tint</span></div><span class="serif" style="color:var(--gold);">$89</span></div>
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Korean Lash Lift + Tint</span></div><span class="serif" style="color:var(--gold);">$99</span></div>
+      </div>
+    </div>
+
+    <div id="lamination" class="ptab-content" style="min-height:400px;">
+      <div class="ptable" style="animation:fadeIn .5s ease-out;">
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Brow Lamination</span></div><span class="serif" style="color:var(--gold);">$59</span></div>
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Brow Mapping + Brow Lamination</span></div><span class="serif" style="color:var(--gold);">$79</span></div>
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Brow Mapping + Lamination + Tint</span></div><span class="serif" style="color:var(--gold);">$89</span></div>
+      </div>
+    </div>
+
+    <div id="facials" class="ptab-content" style="min-height:400px;">
+      <div class="ptable" style="animation:fadeIn .5s ease-out;">
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Mini Facial — 15 min</span></div><span class="serif" style="color:var(--gold);">$45</span></div>
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Vitamin C Brightening Facial — 25 min</span></div><span class="serif" style="color:var(--gold);">$60</span></div>
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Deep Cleanse & Detox Facial — 40 min</span></div><span class="serif" style="color:var(--gold);">$75</span></div>
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Pearl Signature Glow Facial — 1 hr</span></div><span class="serif" style="color:var(--gold);">$99</span></div>
+      </div>
+    </div>
+
+    <div id="relax" class="ptab-content" style="min-height:400px;">
+      <div class="ptable" style="animation:fadeIn .5s ease-out;">
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Hair Oil + Scalp Massage — 15 min</span></div><span class="serif" style="color:var(--gold);">$40</span></div>
+        <div class="prow"><div><span style="font-size:.88rem;color:var(--bright);">Hair Oil + Scalp Massage + Neck & Shoulder — 20 min</span></div><span class="serif" style="color:var(--gold);">$45</span></div>
+      </div>
     </div>
     <p class="fu" style="text-align:center;color:var(--muted);font-size:.74rem;margin-top:1.2rem;">Prices vary by treatment area. <a href="#contact" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px;">Contact us</a> for a personalised quote.</p>
   </div>
@@ -859,60 +928,8 @@ img{display:block;max-width:100%}
       <h2 class="serif" style="font-size:clamp(1.9rem,5vw,2.9rem);margin:0 0 .7rem;">Book an Appointment</h2>
       <p style="color:var(--soft);font-size:.88rem;line-height:1.7;max-width:360px;margin:0 auto;">Fill in your details and we'll confirm your booking in Perth as soon as possible.</p>
     </div>
-    <form id="bform" class="ff fu" novalidate style="display:flex;flex-direction:column;gap:16px;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;" class="tc2">
-        <div><label for="fn">Full Name <span style="color:var(--gold);">*</span></label><input type="text" id="fn" name="name" placeholder="Your full name" required/></div>
-        <div><label for="fp">Phone Number <span style="color:var(--gold);">*</span></label><input type="tel" id="fp" name="phone" placeholder="+61 4XX XXX XXX" required/></div>
-      </div>
-      <div><label for="fe">Email Address</label><input type="email" id="fe" name="email" placeholder="your@email.com"/></div>
-      <div class="sel">
-        <label for="fs">Select a Service <span style="color:var(--gold);">*</span></label>
-        <select id="fs" name="service" required>
-          <option value="" disabled selected>Choose a service…</option>
-          <optgroup label="Threading">
-            <option value="eyebrow-threading">Eyebrow Threading — from $12</option>
-            <option value="lip-threading">Lip Threading — from $12</option>
-            <option value="chin-threading">Chin Threading — from $12</option>
-            <option value="fullface-threading">Full Face Threading — from $30</option>
-          </optgroup>
-          <optgroup label="Waxing">
-            <option value="eyebrow-waxing">Eyebrow Waxing — from $12</option>
-            <option value="facial-waxing">Facial Waxing — from $14</option>
-          </optgroup>
-          <optgroup label="Brows & Lashes">
-            <option value="brow-henna">Brow Henna Tinting — from $25</option>
-            <option value="brow-lamination">Brow Lamination — from $35</option>
-            <option value="lash-lifting">Lash Lifting — from $35</option>
-          </optgroup>
-          <optgroup label="Skin">
-            <option value="facial">Facial Treatment — from $35</option>
-          </optgroup>
-        </select>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;" class="tc2">
-        <div><label for="fd">Preferred Date <span style="color:var(--gold);">*</span></label><input type="date" id="fd" name="date" required/></div>
-        <div class="sel">
-          <label for="ft">Preferred Time <span style="color:var(--gold);">*</span></label>
-          <select id="ft" name="time" required>
-            <option value="" disabled selected>Choose a time…</option>
-            <option>9:00 AM</option><option>9:30 AM</option><option>10:00 AM</option>
-            <option>10:30 AM</option><option>11:00 AM</option><option>11:30 AM</option>
-            <option>12:00 PM</option><option>12:30 PM</option><option>1:00 PM</option>
-            <option>1:30 PM</option><option>2:00 PM</option><option>2:30 PM</option>
-            <option>3:00 PM</option><option>3:30 PM</option><option>4:00 PM</option>
-            <option>4:30 PM</option><option>5:00 PM</option>
-          </select>
-        </div>
-      </div>
-      <div><label for="fmsg">Additional Notes</label><textarea id="fmsg" name="message" rows="3" placeholder="Any notes, skin sensitivities or preferences…" style="resize:vertical;"></textarea></div>
-      <button type="submit" class="btn-g" style="width:100%;padding:15px;font-size:.72rem;margin-top:4px;">Send Booking Request</button>
-    </form>
-    <div id="form-ok" class="fi" style="text-align:center;padding:3.5rem 0;">
-      <div style="width:56px;height:56px;border-radius:50%;border:1px solid rgba(201,169,110,.35);background:rgba(201,169,110,.07);display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
-      </div>
-      <h3 class="serif" style="font-size:1.55rem;color:var(--bright);margin-bottom:.6rem;">Request Received!</h3>
-      <p style="color:var(--soft);font-size:.88rem;line-height:1.7;">We'll be in touch shortly to confirm your appointment at Pearl Beauty Bar Perth.</p>
+    <div style="text-align:center;">
+      <a href="https://square.site/appointments/buyer/widget/tjjwehmuij3xe6/L0Q9Q3TZV66ZF" target="_blank" rel="noopener" class="btn-g">Book Your Appointment</a>
     </div>
   </div>
 </section>
@@ -928,18 +945,19 @@ img{display:block;max-width:100%}
       <p style="font-size:.78rem;color:var(--muted);line-height:1.8;max-width:200px;">Perth's boutique brow &amp; beauty studio — expert threading, lamination, lash lifting &amp; more.</p>
       <div style="margin-top:1.2rem;">
         <p class="lbl" style="font-size:.54rem;margin-bottom:.6rem;">Opening Hours</p>
-        <p style="font-size:.74rem;color:var(--muted);line-height:1.9;">Mon–Fri: 9:00am – 5:30pm<br/>Saturday: 9:00am – 4:00pm<br/>Sunday: Closed</p>
+        <p style="font-size:.74rem;color:var(--muted);line-height:1.9;">Mon–Fri: 10:00am – 6:00pm<br/>Saturday: 10:00am – 4:00pm<br/>Sunday: Closed</p>
       </div>
     </div>
     <nav>
       <p class="lbl" style="font-size:.54rem;margin-bottom:1.1rem;">Our Services</p>
       <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
-        <li><a href="#services" style="font-size:.8rem;color:var(--muted);transition:color .25s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">Eyebrow Threading Perth</a></li>
-        <li><a href="#services" style="font-size:.8rem;color:var(--muted);transition:color .25s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">Brow Lamination Perth</a></li>
-        <li><a href="#services" style="font-size:.8rem;color:var(--muted);transition:color .25s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">Lash Lifting Perth</a></li>
+        <li><a href="#services" style="font-size:.8rem;color:var(--muted);transition:color .25s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">Brow Lamination </a></li>
+        <li><a href="#services" style="font-size:.8rem;color:var(--muted);transition:color .25s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">Eyebrow Threading </a></li>
+        <li><a href="#services" style="font-size:.8rem;color:var(--muted);transition:color .25s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">Brow Lamination </a></li>
+        <li><a href="#services" style="font-size:.8rem;color:var(--muted);transition:color .25s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">Lash Lifting </a></li>
         <li><a href="#services" style="font-size:.8rem;color:var(--muted);transition:color .25s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">Brow Henna Tinting</a></li>
         <li><a href="#services" style="font-size:.8rem;color:var(--muted);transition:color .25s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">Facial Threading</a></li>
-        <li><a href="#services" style="font-size:.8rem;color:var(--muted);transition:color .25s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">Facials Perth</a></li>
+        <li><a href="#services" style="font-size:.8rem;color:var(--muted);transition:color .25s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">Facials </a></li>
       </ul>
     </nav>
     <address style="font-style:normal;">
@@ -1047,6 +1065,7 @@ if(ap)apIO.observe(ap);
 const form=document.getElementById('bform');
 const dateInput=document.getElementById('fd');
 if(dateInput)dateInput.min=new Date().toISOString().split('T')[0];
+if(form){
 form.addEventListener('submit',e=>{
   e.preventDefault();
   let ok=true;
@@ -1089,6 +1108,18 @@ form.addEventListener('submit',e=>{
     alert('Error sending inquiry. Please try again in a moment.');
   });
 });
+}
+
+/* PRICING TABS */
+function switchTab(tabName){
+  // Remove active from all
+  document.querySelectorAll('.ptab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.ptab-content').forEach(c=>c.classList.remove('active'));
+  
+  // Add active to clicked elements
+  document.querySelector('[data-tab="'+tabName+'"]').classList.add('active');
+  document.getElementById(tabName).classList.add('active');
+}
 </script>
 </body>
 </html>
