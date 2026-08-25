@@ -92,6 +92,9 @@ a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
 .serif{font-family:'Playfair Display',serif;letter-spacing:-.02em}
 .lbl{font-size:.56rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.location-map{width:100%;min-height:220px;border:1px solid var(--border);background:var(--panel);overflow:hidden}
+.location-map iframe{display:block;width:100%;height:220px;border:0;filter:grayscale(.35) contrast(1.05)}
+.map-link{display:inline-flex;margin-top:.8rem;color:var(--gold);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
 
 /* CURSOR */
 #cur,#cur2{position:fixed;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
@@ -981,6 +984,13 @@ img{display:block;max-width:100%}
         <li><span class="foot-a"><svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="var(--gold)" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>Shop 49, London Court, Perth WA 6000</span></li>
       </ul>
     </address>
+    <div>
+      <p class="lbl" style="font-size:.54rem;margin-bottom:1.1rem;">Find Us</p>
+      <div class="location-map">
+        <iframe title="Pearl Beauty Bar location at Shop 49 London Court" loading="lazy" src="https://www.google.com/maps?q=-31.9552045,115.8587614&z=17&output=embed"></iframe>
+      </div>
+      <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=-31.9552045,115.8587614" target="_blank" rel="noopener">Get directions</a>
+    </div>
     <div>
       <p class="lbl" style="font-size:.54rem;margin-bottom:1.1rem;">Follow Us</p>
       <div style="display:flex;gap:9px;margin-bottom:1.2rem;">
