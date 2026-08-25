@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pearl Beauty Bar DL Double-Sided Pricelist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #09090d;
+      --panel: #0f1016;
+      --gold: #c9a96e;
+      --gold-soft: #e2c98a;
+      --text: #e4e6ef;
+      --muted: #8c92a8;
+      --line: #23263a;
+    }
+
+    @page {
+      size: 105mm 216mm;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      font-family: "DM Sans", Arial, sans-serif;
+    }
+
+    .sheet {
+      width: 105mm;
+      height: 216mm;
+      position: relative;
+      page-break-after: always;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    .sheet:last-child {
+      page-break-after: auto;
+    }
+
+    .crop {
+      position: absolute;
+      background: #fff;
+      z-index: 10;
+      opacity: 0.9;
+    }
+
+    .h { width: 3mm; height: 0.2mm; }
+    .v { width: 0.2mm; height: 3mm; }
+
+    .tlh { left: 0; top: 3mm; }
+    .tlv { left: 3mm; top: 0; }
+    .trh { right: 0; top: 3mm; }
+    .trv { right: 3mm; top: 0; }
+    .blh { left: 0; bottom: 3mm; }
+    .blv { left: 3mm; bottom: 0; }
+    .brh { right: 0; bottom: 3mm; }
+    .brv { right: 3mm; bottom: 0; }
+
+    .trim {
+      position: absolute;
+      left: 3mm;
+      top: 3mm;
+      width: 99mm;
+      height: 210mm;
+      border: 0.25mm solid rgba(201, 169, 110, 0.45);
+      overflow: hidden;
+      background: radial-gradient(130% 60% at 50% -10%, rgba(201, 169, 110, 0.2) 0%, rgba(201, 169, 110, 0) 48%), var(--bg);
+      color: var(--text);
+    }
+
+    .front {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 2.6mm;
+      padding: 6.6mm 5.3mm 5.2mm;
+    }
+
+    .brand {
+      text-align: center;
+      line-height: 1;
+    }
+
+    .brand .l1 {
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      font-size: 13.8mm;
+      color: #f3efe8;
+      font-weight: 600;
+      letter-spacing: 0.015em;
+    }
+
+    .brand .l2 {
+      margin: 1.2mm 0 0;
+      font-family: "Playfair Display", serif;
+      font-size: 5.45mm;
+      color: var(--gold);
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: 0.11em;
+    }
+
+    .location {
+      margin: 0;
+      text-align: center;
+      color: var(--gold-soft);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 2.3mm;
+      font-weight: 700;
+    }
+
+    .hero-copy {
+      border: 0.2mm solid rgba(201, 169, 110, 0.3);
+      border-radius: 1.8mm;
+      background: rgba(15, 16, 22, 0.7);
+      padding: 4.3mm 3.6mm;
+      text-align: center;
+    }
+
+    .hero-copy .h {
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      color: #f3efe8;
+      font-size: 7.3mm;
+      line-height: 1.07;
+      font-weight: 600;
+      width: auto;
+      height: auto;
+      background: transparent;
+    }
+
+    .hero-copy .tagline {
+      margin: 2.1mm 0 0;
+      color: var(--muted);
+      font-size: 2.58mm;
+      line-height: 1.48;
+    }
+
+    .tags {
+      margin-top: 2.8mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2mm;
+    }
+
+    .tag {
+      border: 0.2mm solid rgba(201, 169, 110, 0.35);
+      border-radius: 20mm;
+      color: var(--gold-soft);
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 2.08mm;
+      padding: 1.2mm 0;
+      background: rgba(9, 9, 13, 0.42);
+    }
+
+    .front-services {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.2mm;
+    }
+
+    .single-list {
+      border: 0.2mm solid rgba(201, 169, 110, 0.28);
+      border-radius: 1.8mm;
+      background: rgba(255, 255, 255, 0.02);
+      padding: 2.7mm 2.6mm 2.5mm;
+      align-self: flex-start;
+      width: 100%;
+    }
+
+    .single-list h3 {
+      margin: 0 0 1.3mm;
+      color: var(--gold-soft);
+      font-size: 2.52mm;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1mm;
+      align-items: baseline;
+      border-bottom: 0.12mm dotted rgba(201, 169, 110, 0.28);
+      padding: 0.66mm 0;
+    }
+
+    .row:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .service {
+      color: #dde0ed;
+      font-size: 2.34mm;
+      line-height: 1.28;
+      min-width: 0;
+    }
+
+    .price {
+      color: var(--gold);
+      font-family: "Playfair Display", serif;
+      font-size: 2.7mm;
+      line-height: 1;
+      white-space: nowrap;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .front-note {
+      margin: 0.1mm 0 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 2.04mm;
+      letter-spacing: 0.03em;
+    }
+
+    .front-footer {
+      border-top: 0.2mm solid rgba(201, 169, 110, 0.28);
+      padding-top: 1.25mm;
+      text-align: center;
+      margin-top: auto;
+    }
+
+    .front-footer .cta {
+      margin: 0;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      font-size: 1.95mm;
+      font-weight: 700;
+    }
+
+    .front-footer .web {
+      margin: 0.7mm 0 0;
+      color: var(--text);
+      font-family: "Playfair Display", serif;
+      font-size: 3.45mm;
+      letter-spacing: 0.02em;
+    }
+
+    .front-footer .addr {
+      margin: 0.55mm 0 0;
+      color: var(--muted);
+      font-size: 1.95mm;
+      letter-spacing: 0.03em;
+    }
+
+    .front-footer .phone,
+    .back-footer .phone {
+      margin: 0.45mm 0 0;
+      color: var(--gold);
+      font-size: 2.15mm;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    .back {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 2.4mm;
+      padding: 5.6mm 5.3mm 5.2mm;
+      background: linear-gradient(180deg, #10111a 0%, #09090d 100%);
+    }
+
+    .back-head {
+      text-align: center;
+      border-bottom: 0.2mm solid rgba(201, 169, 110, 0.28);
+      padding-bottom: 1.6mm;
+    }
+
+    .back-head .brandline {
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      color: #f3efe8;
+      font-size: 6.1mm;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .back-head .brandline i {
+      color: var(--gold);
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      margin-left: 0.5mm;
+    }
+
+    .back-head .title {
+      margin: 1.1mm 0 0;
+      color: var(--gold-soft);
+      text-transform: uppercase;
+      font-size: 2.24mm;
+      letter-spacing: 0.15em;
+      font-weight: 700;
+    }
+
+    .stack {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.35mm;
+      flex: 1;
+      align-content: start;
+    }
+
+    .section {
+      border: 0.16mm solid rgba(201, 169, 110, 0.24);
+      border-radius: 1.1mm;
+      background: rgba(255, 255, 255, 0.02);
+      padding: 1.9mm 1.6mm 1.55mm;
+    }
+
+    .section h3 {
+      margin: 0 0 1.05mm;
+      color: var(--gold-soft);
+      font-size: 2.28mm;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .back .service {
+      font-size: 2.24mm;
+    }
+
+    .back .price {
+      font-size: 2.6mm;
+    }
+
+    .back-bottom {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.9mm;
+      margin-bottom: 0;
+    }
+
+    .qr-top {
+      display: flex;
+      justify-content: center;
+    }
+
+    .qr-label {
+      margin: 0;
+      color: var(--gold-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 2.15mm;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .insta-row {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.3mm;
+      color: var(--text);
+      font-size: 2.2mm;
+      line-height: 1;
+      font-weight: 500;
+      margin-top: 0.3mm;
+    }
+
+    .insta-logo {
+      width: 4mm;
+      height: 4mm;
+      display: inline-block;
+    }
+
+    .back-footer {
+      border-top: 0.2mm solid rgba(201, 169, 110, 0.28);
+      padding-top: 1.25mm;
+      text-align: center;
+      width: 100%;
+    }
+
+    .back-footer .cta {
+      margin: 0;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      font-size: 1.95mm;
+      font-weight: 700;
+    }
+
+    .back-footer .cta.empty {
+      visibility: hidden;
+    }
+
+    .back-footer .web {
+      margin: 0.7mm 0 0;
+      color: var(--text);
+      font-family: "Playfair Display", serif;
+      font-size: 3.45mm;
+      letter-spacing: 0.02em;
+    }
+
+    .back-footer .addr {
+      margin: 0.55mm 0 0;
+      color: var(--muted);
+      font-size: 1.95mm;
+      letter-spacing: 0.03em;
+    }
+
+    .qr {
+      width: 30mm;
+      height: 30mm;
+      border: 0.2mm solid rgba(201, 169, 110, 0.45);
+      border-radius: 0.8mm;
+      background: #fff;
+      object-fit: cover;
+      padding: 0.5mm;
+    }
+  </style>
+</head>
+<body>
+  <section class="sheet">
+    <span class="crop h tlh"></span><span class="crop v tlv"></span>
+    <span class="crop h trh"></span><span class="crop v trv"></span>
+    <span class="crop h blh"></span><span class="crop v blv"></span>
+    <span class="crop h brh"></span><span class="crop v brv"></span>
+
+    <div class="trim">
+      <div class="front">
+        <header class="brand" aria-label="Pearl Beauty Bar">
+          <p class="l1">Pearl</p>
+          <p class="l2">Beauty Bar</p>
+        </header>
+
+        <p class="location">Shop 49, London Court</p>
+
+        <section class="hero-copy">
+          <p class="h">Brow, Lash & Skin</p>
+          <p class="tagline">Expert treatments with premium products in a calm private studio in Perth.</p>
+          <div class="tags">
+            <span class="tag">Threading</span>
+            <span class="tag">Brow Tinting</span>
+            <span class="tag">Lash Lift</span>
+            <span class="tag">Lamination</span>
+            <span class="tag">Facials</span>
+            <span class="tag">Relaxation</span>
+          </div>
+        </section>
+
+        <div class="front-services">
+          <section class="single-list">
+            <h3>Threading & Waxing</h3>
+            <div class="row"><span class="service">Eyebrows Threading / Wax</span><span class="price">$22</span></div>
+            <div class="row"><span class="service">Upper Lip Threading / Wax</span><span class="price">$16</span></div>
+            <div class="row"><span class="service">Chin Threading / Wax</span><span class="price">$17</span></div>
+            <div class="row"><span class="service">Nose Wax</span><span class="price">$15</span></div>
+            <div class="row"><span class="service">Ear Wax</span><span class="price">$15</span></div>
+            <div class="row"><span class="service">Lip + Chin Threading / Wax</span><span class="price">$30</span></div>
+            <div class="row"><span class="service">Eyebrow + Lip + Chin</span><span class="price">$52</span></div>
+            <div class="row"><span class="service">Sideburns</span><span class="price">$21</span></div>
+            <div class="row"><span class="service">Neck</span><span class="price">$19</span></div>
+            <div class="row"><span class="service">Full Face Threading / Wax</span><span class="price">$65</span></div>
+          </section>
+
+          <section class="single-list">
+            <h3>Brow Tinting</h3>
+            <div class="row"><span class="service">Brow Henna</span><span class="price">$45</span></div>
+            <div class="row"><span class="service">Hybrid Dye</span><span class="price">$35</span></div>
+            <div class="row"><span class="service">Eyebrow Tint</span><span class="price">$21</span></div>
+            <div class="row"><span class="service">Lash Tint</span><span class="price">$22</span></div>
+            <div class="row"><span class="service">Lash Dye</span><span class="price">$29</span></div>
+          </section>
+        </div>
+
+        <p class="front-note">Walk-ins welcome · By appointment available</p>
+
+        <footer class="front-footer">
+          <p class="cta">Scan QR on back to book online</p>
+          <p class="web">www.pearlbeautybar.com.au</p>
+          <p class="phone">(08) 6186 7141</p>
+          <p class="addr">Shop 49, London Court, Perth WA 6000</p>
+        </footer>
+      </div>
+    </div>
+  </section>
+
+  <section class="sheet">
+    <span class="crop h tlh"></span><span class="crop v tlv"></span>
+    <span class="crop h trh"></span><span class="crop v trv"></span>
+    <span class="crop h blh"></span><span class="crop v blv"></span>
+    <span class="crop h brh"></span><span class="crop v brv"></span>
+
+    <div class="trim">
+      <div class="back">
+        <header class="back-head">
+          <p class="brandline">Pearl <i>Beauty Bar</i></p>
+          <p class="title">Service Pricing (AUD)</p>
+        </header>
+
+        <main class="stack">
+          <section class="section">
+            <h3>Combos</h3>
+            <div class="row"><span class="service">Brow Henna + Threading / Wax</span><span class="price">$59</span></div>
+            <div class="row"><span class="service">Hybrid Dye + Eyebrow Threading / Wax</span><span class="price">$49</span></div>
+            <div class="row"><span class="service">Eyebrow Tint + Threading / Wax</span><span class="price">$39</span></div>
+            <div class="row"><span class="service">Eyebrow Threading + Tint + Lash Tint</span><span class="price">$55</span></div>
+          </section>
+
+          <section class="section">
+            <h3>Lash Lift</h3>
+            <div class="row"><span class="service">Lash Lift + Tint</span><span class="price">$80</span></div>
+            <div class="row"><span class="service">Keratin Lash Lift + Tint</span><span class="price">$89</span></div>
+            <div class="row"><span class="service">Korean Lash Lift + Tint</span><span class="price">$99</span></div>
+          </section>
+
+          <section class="section">
+            <h3>Lamination</h3>
+            <div class="row"><span class="service">Brow Lamination</span><span class="price">$59</span></div>
+            <div class="row"><span class="service">Brow Mapping + Brow Lamination</span><span class="price">$79</span></div>
+            <div class="row"><span class="service">Brow Mapping + Lamination + Tint</span><span class="price">$89</span></div>
+          </section>
+
+          <section class="section">
+            <h3>Facials</h3>
+            <div class="row"><span class="service">Mini Facial - 15 min</span><span class="price">$45</span></div>
+            <div class="row"><span class="service">Vitamin C Brightening Facial - 25 min</span><span class="price">$60</span></div>
+            <div class="row"><span class="service">Deep Cleanse & Detox Facial - 40 min</span><span class="price">$75</span></div>
+            <div class="row"><span class="service">Pearl Signature Glow Facial - 1 hr</span><span class="price">$99</span></div>
+          </section>
+
+          <section class="section">
+            <h3>Relaxation</h3>
+            <div class="row"><span class="service">Hair Oil + Scalp Massage - 15 min</span><span class="price">$40</span></div>
+            <div class="row"><span class="service">Hair Oil + Scalp Massage + Neck & Shoulder - 20 min</span><span class="price">$45</span></div>
+          </section>
+        </main>
+
+        <div class="back-bottom">
+          <div class="qr-top">
+            <img class="qr" src="booking-qr.png" alt="QR code to book online" />
+          </div>
+
+          <p class="qr-label">Book Online</p>
+          <p class="insta-row"><img class="insta-logo" src="instagram-logo.svg" alt="Instagram"/> pearl_beauty.au</p>
+
+          <footer class="back-footer">
+            <p class="cta empty" aria-hidden="true">placeholder</p>
+            <p class="web">www.pearlbeautybar.com.au</p>
+            <p class="phone">(08) 6186 7141</p>
+            <p class="addr">Shop 49, London Court, Perth WA 6000</p>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
